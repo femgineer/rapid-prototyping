@@ -8,8 +8,8 @@ var router = Backbone.Router.extend({
     "*actions": "home"
   },
   initialize: function(){  	
-  	getMessages();  	
-  	// Parse.initialize(parseID,parseKey);
+  	// getMessages();  	
+  	Parse.initialize(parseID,parseKey);
  
   	this.headerView = new HeaderView();
 	this.headerView.render();
@@ -17,8 +17,8 @@ var router = Backbone.Router.extend({
 	this.footerView.render();
   },
   home: function(){
-    // this.homeView = new HomeView();
-    // this.homeView.render();
+    this.homeView = new HomeView();
+    this.homeView.render();
   }
 });
 
@@ -59,8 +59,10 @@ HomeView = Backbone.View.extend({
 
 	initialize: function() {
 		this.collection = new MessageBoard();
+		console.log(this.collection)
 		this.collection.bind("all", this.render, this);
 		this.collection.fetch();
+
 		this.collection.on("add", function(message) {
 			message.save(null, {
 				success: function(message) {
