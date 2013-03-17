@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="http://www.parsecdn.com/js/parse-1.0.14.min.js"></script>
+	<script src="js/app.js" type="text/javascript" language="javascript"></script>
+	<link href="css/bootstrapp.min.css" type="text/css" rel="stylesheet"/>
+	<link href="css/style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<h1>Simple Message Board with Parse REST API</h1>
+			<table class="table table-bordered table-striped">
+				<caption>Messsages</caption>
+				<thead>
+					<tr>
+						<th>
+							Username
+						</th>
+						<th>
+							Message
+						</th>
+					</tr>				
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="2">No message</td>
+					</tr>
+				</tbody>
+			</table>			
+		</div>		
+		<div class="row-fluid">
+			<form id="new-user">
+				<input type="text" name="username" placeholder="Username"/>
+				<input type="text" name="username" placeholder="Message"/>
+				<a id="send" class="btn btn-primary">SEND</a>
+			</form>
+		</div>
+	</div>
+</body>
+</html>	

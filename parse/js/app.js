@@ -1,13 +1,15 @@
-var parseId="0lkeIOECpDSJQIpjDjI5IuS0wi1C6epWPaDg7KvQ";
-var parseKey="ixcOHViobsgrWQ2Zfm3iOzajNjZlluQsgdFnOtp4";
+var parseID="0lkeIOECpDSJQIpjDjI5IuS0wi1C6epWPaDg7KvQ";
+var parseKey="1i3qyoYALrXmPW2cKvZ85NDF6w92tpLTQJgEnc6H";
 
 $(document).ready(function() {
 
 	getMessages();
 	$("#send").click(function() {
-		var username = $("input[name=username]").attr('value');
-		var message = $("input[name=message]").attr('value');
+		
+		var username = document.getElementById("username").value;
+		var message = document.getElementById("message").value;		
 		console.log(username)
+		console.log(message)
 		console.log("!")	
 		$.ajax({
 			url: " https://api.parse.com/1/classes/MessageBoard",
@@ -31,7 +33,7 @@ $(document).ready(function() {
 				console.log("error");
 			}
 		});
-	}
+	});
 })
 
 function getMessages() {
